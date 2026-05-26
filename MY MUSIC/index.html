@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MY MUSIC</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff66cc">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>MY MUSIC</h1>
+
+    <div id="songList"></div>
+
+    <div id="player">
+
+        <audio id="audioElement"></audio>
+
+        <p id="currentSong">Select a song</p>
+
+        <button id="playPause">Play</button>
+
+        <input type="range" id="seekBar" value="0">
+
+        <label for="speedControl">Speed: <span id="speedValue">1.0x</span></label>
+        <input type="range" id="speedControl" min="0.5" max="2" step="0.1" value="1">
+
+        <!-- 🔥 VOLUME SLIDER -->
+        <label for="volumeControl">Volume</label>
+        <input type="range" id="volumeControl" min="0" max="2" step="0.01" value="1">
+
+        <!-- 🔥 BASS BOOST SLIDER -->
+        <label for="bassControl">Bass Boost</label>
+        <input type="range" id="bassControl" min="-20" max="20" step="1" value="0">
+
+        <!-- 🔥 REVERB SLIDER -->
+        <label for="reverbControl">Reverb</label>
+        <input type="range" id="reverbControl" min="0" max="1" step="0.01" value="0">
+
+        <canvas id="visualizer" width="600" height="150"></canvas>
+
+        <!-- ⭐ MINI PLAYER BUTTON ⭐ -->
+        <button id="miniPlayerBtn">Mini Player</button>
+    </div>
+
+    <!-- ⭐ MINI PLAYER WINDOW ⭐ -->
+    <div id="miniPlayer" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 260px;
+        padding: 15px;
+        background: rgba(0,0,0,0.85);
+        border: 2px solid #ff7b00;
+        border-radius: 12px;
+        display: none;
+        z-index: 9999;
+        backdrop-filter: blur(6px);
+    ">
+        <h3 id="miniSongName" style="margin: 0 0 10px 0; color: #ff7b00; font-size: 16px;">Song</h3>
+
+        <button id="miniPlayPause" style="width: 100%; margin-top: 10px;">Play</button>
+
+        <input type="range" id="miniSeek" value="0" style="width: 100%; margin-top: 10px;">
+
+        <button id="exitMini" style="width: 100%; margin-top: 10px;">Exit Mini Player</button>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js");
+        }
+    </script>
+
+</body>
+</html>

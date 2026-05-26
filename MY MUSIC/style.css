@@ -1,0 +1,166 @@
+/* GLOBAL -------------------------------------------------- */
+body {
+    background: #000; /* FULL BLACK */
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* TITLE -------------------------------------------------- */
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #ff7b00; /* HI-VIS ORANGE */
+    text-shadow: 0 0 15px #ff7b00, 0 0 30px #ff5500;
+    animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+    from { text-shadow: 0 0 10px #ff7b00; }
+    to { text-shadow: 0 0 25px #ff5500; }
+}
+
+/* SONG LIST -------------------------------------------------- */
+#songList {
+    margin: 40px auto 20px auto;
+    width: 80%;
+    max-width: 400px;
+    max-height: 200px;   /* how tall the box is */
+    overflow-y: auto;    /* enables scrolling */
+    padding-right: 10px; /* stops scrollbar covering text */
+}
+
+#songList div {
+    background: #000; /* BLACK */
+    color: #fff;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.2s;
+
+    border: 2px solid #ff7b00; /* ORANGE OUTLINE */
+    box-shadow: 0 0 10px #ff7b0033;
+}
+
+#songList div:hover {
+    background: #ff7b0011; /* faint orange tint */
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff7b00;
+}
+
+/* CURRENT SONG LABEL ---------------------------------------- */
+#currentSong {
+    margin-top: 10px;
+    font-size: 22px;
+    color: #ff7b00;
+    text-shadow: 0 0 10px #ff7b00;
+}
+
+/* BUTTON -------------------------------------------------- */
+#playPause {
+    background: #000;
+    color: #ff7b00;
+    border: 2px solid #ff7b00;
+    padding: 12px 25px;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.2s;
+    box-shadow: 0 0 10px #ff7b00;
+}
+
+#playPause:hover {
+    background: #ff7b0022;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #ff7b00;
+}
+
+/* SEEK BAR -------------------------------------------------- */
+#seekBar {
+    width: 80%;
+    margin-top: 20px;
+    accent-color: #ff7b00;
+    filter: drop-shadow(0 0 10px #ff7b00);
+}
+
+/* SPEED CONTROL --------------------------------------------- */
+#speedControl {
+    width: 60%;
+    margin-top: 10px;
+    accent-color: #ffaa00;
+}
+
+label[for="speedControl"] {
+    display: block;
+    margin-top: 10px;
+    color: #ff7b00;
+}
+
+/* VISUALIZER -------------------------------------------------- */
+#visualizer {
+    width: 90%;
+    height: 150px;
+    margin-top: 25px;
+    background: #000;
+    border-radius: 10px;
+    border: 2px solid #ff7b00; /* ORANGE OUTLINE */
+    box-shadow: 0 0 15px #ffaa00;
+}
+
+/* ⭐ MINI PLAYER WINDOW ⭐ */
+#miniPlayer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 260px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #ff7b00;
+    border-radius: 12px;
+    display: none;
+    z-index: 9999;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 20px #ff7b00;
+}
+
+/* MINI PLAYER TITLE */
+#miniPlayer h3 {
+    margin: 0 0 10px 0;
+    color: #ff7b00;
+    font-size: 16px;
+    text-shadow: 0 0 10px #ff7b00;
+}
+
+/* MINI PLAYER BUTTONS */
+#miniPlayer button {
+    background: #000;
+    color: #ff7b00;
+    border: 2px solid #ff7b00;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: 0.2s;
+    box-shadow: 0 0 10px #ff7b00;
+}
+
+#miniPlayer button:hover {
+    background: #ff7b0022;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff7b00;
+}
+
+/* MINI PLAYER SEEK BAR */
+#miniSeek {
+    width: 100%;
+    margin-top: 10px;
+    accent-color: #ff7b00;
+    filter: drop-shadow(0 0 10px #ff7b00);
+}
